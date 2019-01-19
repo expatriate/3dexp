@@ -10,6 +10,8 @@ $(document).ready(function() {
     // It looks not nice, so we disable it:
     callbacks: {
       beforeOpen: function() {
+        console.log(window.parent)
+        window.parent.resetFrameSize($(window).height(),$(window).width())
         if($(window).width() < 700) {
           this.st.focus = false;
         } else {
