@@ -5,392 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-    <meta name="description" content="Smartsoft company">
-    <meta name="keywords" content="design,coding,consulting,animation">
-    <meta name="title" content="Smartsoft company">
+    <meta name="title" content="3dexp">
     <!-- <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/vendor.main.css"> -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="dist/css/main.css">
     <link rel="stylesheet" href="css/vendor.main.css">
-    <script src="js/vendor.min.js"></script>
-    <script data-cfasync="false" src="js/form-submit-handler.js"></script>
 
     <title>Smartsoft company</title>
 </head>
 <body>
-    <div id="startoverlay">
-    </div>
-    <div id="fullpage">
-
-        <div id="header" class="no-main">
-
-            <div id="menu" class="menu" style="visibility: hidden">
-                <div class="menu__inside">
-                </div>
-            </div>
-
-            <a href="#main" class="go-to-main go-to-main-image no-border">
-                <div style="background:url('img/logo.svg') no-repeat">
-                </div>
-            </a>
-            <a href="#main" class="go-to-main go-to-main-text no-border">
-                SMARTSOFT
+    <div class="menu">
+        <div class="menu__item">
+            <a class="link-button link-button--filled-blue popup-with-form" target="_self" href="#test-form">
+                <span>
+                    Предварительная регистрация
+                </span>
             </a>
         </div>
-
-        <div class="mail">
-            CONTACT
-        </div>
-
-        <div class="share">
-            <!-- <a href="https://www.behance.net/KsushaBleskina" target="_blank">BEHANCE Portfolio</a> -->
-        </div>
-
-        <div id="footer">
-            <div class="copy">
-                &copy; 2018. ООО «Smartsoft Company»
-            </div>
-        </div>
-
-        <div class="section section-main">
-
-            <img id="photo_0" class="photobg" src="img/main_page.jpg">
-
-            <div class="section__wrapper section__wrapper__middle">
-                <div class="section-main__links">
-                    <div class="section-main__link-wrap">
-                        <a class="section-main__link" touch-action="none" href="#design">design</a>
-                    </div>
-                    <div class="section-main__link-wrap">
-                        <a class="section-main__link" touch-action="none" href="#coding">coding</a>
-                    </div>
-                    <div class="section-main__link-wrap">
-                        <a class="section-main__link" touch-action="none" href="#consulting">consulting</a>
-                    </div>
-                    <div class="section-main__link-wrap">
-                        <a class="section-main__link" touch-action="none" href="#animation">animation</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section section-design">
-
-            <img id="photo_1" class="photobg" src="img/design_page.jpg">
-
-            <div class="section__wrapper">
-                <div class="section-title">
-                    <div class="section-title__text">
-                        DESIGN
-                    </div>
-                    <a href="#main" class="section-title__close">
-                        <div class="section-title__close-icon">
-                        </div>
-                        CLOSE
-                    </a>
-                </div>
-                <div class="section-text section-text--pad-bot">
-                    Работаем над визуальной составляющей ваших маркетинговых материалов. Формируем стратегию продвижения и доносим ключевые идеи до конечного потребителя. Решаем как отдельные задачи дизайна, так и комплексную разработку (под ключ) фирменного стиля и построения сильного бренда для доминирования на рынке.
-                </div>
-                <div class="section-text section-text__small section-text--pad-bot">
-                    Годовые отчеты<br>
-                    Презентации (печатные и видео)<br>
-                    Айдентика<br>
-                    Сувенирный дизайн и реализация<br>
-                    Буклеты и каталоги<br>
-                    Корпоративный брендинг<br>
-                    Корпоративные подарки<br>
-                    Календари<br>
-                </div>
-                <!-- <div class="section-portfolio">
-                    <a class="section-portfolio__link" data-href="designportfolio">
-                        PORTFOLIO
-                    </a>
-                </div> -->
-            </div>
-        </div>
-        <div class="section section-coding">
-
-            <img id="photo_2" class="photobg" src="img/coding_page.jpg">
-
-            <div class="section__wrapper">
-                <div class="section-title">
-                    <div class="section-title__text">
-                        CODING
-                    </div>
-                    <a href="#main" class="section-title__close">
-                        <div class="section-title__close-icon">
-                        </div>
-                        CLOSE
-                    </a>
-                </div>
-                <div class="section-text section-text--pad-bot">
-                    Комплексная веб-разработка и разработка мобильных приложений.<br>
-                    Разрабатываем системы любого уровня сложности, которые помогают бизнесу расширять свою деятельность и повышать уровень прибыли. Подбираем эффективные решения как для быстрого запуска стартапов, так и для оптимизации уже существующего бизнеса. Формируем стратегию устойчивого развития и продвижения вашей компании в цифровом пространстве. 
-                </div>
-                <div class="section-text section-text__small section-text--pad-bot">
-                    Веб-сервисы<br>
-                    Мобильные приложения<br>
-                    Интернет-магазины<br>
-                    Корпоративные сайты<br>
-                    Быстрые решения<br>
-                    Поддержка и развитие<br>
-                </div>
-                <!-- <div class="section-portfolio">
-                    <a class="section-portfolio__link" data-href="codingportfolio">
-                        PORTFOLIO
-                    </a>
-                </div> -->
-            </div>
-        </div>
-
-        <div class="section section-consulting">
-            
-            <img id="photo_4" class="photobg" src="img/consulting_page.jpg">
-
-            <div class="section__wrapper">
-                <div class="section-title">
-                    <div class="section-title__text">
-                        CONSULTING
-                    </div>
-                    <a href="#main" class="section-title__close">
-                        <div class="section-title__close-icon">
-                        </div>
-                        CLOSE
-                    </a>
-                </div>
-                <div class="section-text section-text__small section-text__opacity section-text--pad-bot">
-                    С.А.М. Консалтинг<br>
-                    Социология, аналитика, мониторинг + консалтинг услуги<br>
-                    <br>
-                    Предлагаем проведение исследований общественного мнения в онлайн и оффлайн форматах, качественный мониторинг сми, блогосферы с оценкой лояльности и цитируемости. По результатам исследований формируются аналитические выводы и предложения по развитию, разрабатываются стратегии и разовые акции.<br>
-                    Богатый опыт работы с имиджем, продвижение персоналий и брендов, интернет-сопровождение и SMM.<br>
-                    Помимо поддержки тех или иных лиц и проектов, неоднократно занимались контрмероприятиями и кампаниями против оппонентов и конкурентов.<br>
-                    Среди предлагаемых услуг – работа со СМИ: анонсирование, организация пресс-конференций и пресс-туров, репортажи, распространение информации, размещение в СМИ любого уровня.<br>
-                    Богатый опыт работы в коммерческой рекламе и в политической сфере.<br>
-                    Собственная база промоутеров и блогеров.<br>
-                </div>
-                <!-- <div class="section-portfolio">
-                    <a class="section-portfolio__link" data-href="consultingportfolio">
-                       
-                    </a>
-                </div> -->
-            </div>
-        </div>
-
-        <div class="section section-animation">
-
-            <img id="photo_5" class="photobg" src="img/animation_page.jpg">
-
-            <div class="section__wrapper">
-                <div class="section-title">
-                    <div class="section-title__text">
-                        ANIMATION
-                    </div>
-                    <a href="#main" class="section-title__close">
-                        <div class="section-title__close-icon">
-                        </div>
-                        CLOSE
-                    </a>
-                </div>
-                <div class="section-text section-text--pad-bot">
-                    Компания «Smartsoft» занимается полным циклом производства анимационных сериалов и полнометражных фильмов. В студии работают профессиональные режиссеры, иллюстраторы, мультипликаторы, риггеры и другие специалисты.<br>
-                    <br>
-                    Основная концепция заключается в производстве мультипликационной продукции в любой технологии (компьютерная анимация, классическая анимация, совмещенные технологии, 3D, VR).
-                    <br>
-                    Среди проектов компании «Smartsoft» такие мультфильмы, как «Моки» и «Занимательная география».<br>
-                </div>
-                <!-- <div class="section-portfolio">
-                    <a class="section-portfolio__link" data-href="animationportfolio">
-                        
-                    </a>
-                </div> -->
-            </div>
-        </div>
-    </div>
-
-    <div class="menu-hidden">
-        <div class="menu-hidden__container">
-             <div class="section section-menu">
-                <div class="section__wrapper menu-hidden__items">
-                    <a class="menu-link" touch-action="none" data-img="js-preview-main" href="#main">main</a>
-                    <a class="menu-link" touch-action="none" data-img="js-preview-design" href="#design">design</a>
-                    <a class="menu-link" touch-action="none" data-img="js-preview-coding" href="#coding">coding</a>
-                    <a class="menu-link" touch-action="none" data-img="js-preview-consulting" href="#consulting">consulting</a>
-                    <a class="menu-link" touch-action="none" data-img="js-preview-animation" href="#animation">animation</a>
-                    <div id="js-menu-preview" class="menu-preview">
-                        <img id="js-preview-main" src="img/main_page.jpg">
-                        <img id="js-preview-design" src="img/design_page.jpg">
-                        <img id="js-preview-coding" src="img/coding_page.jpg">
-                        <img id="js-preview-consulting" src="img/consulting_page.jpg">
-                        <img id="js-preview-animation" src="img/animation_page.jpg">
-                    </div>
-
-                    <div class="menu-hidden__close mobile-hidden">
-                        X
-                    </div>
-                </div>
-             </div>
-        </div>
-    </div>
-
-
-    <div class="portfolio-hidden" id="designportfolio">
-        <div class="section-black section__wrapper">
-            <div class="section-title">
-                <div class="section-title__text">
-                    DESIGN
-                    <span class="section-title__subtext">
-                        PORTFOLIO
-                    </span>
-                </div>
-                <span  data-href="designportfolio" class="section-title__close section-portfolio__close">
-                    <div class="section-title__close-icon">
-                    </div>
-                    CLOSE
+        <div class="menu__item">
+            <a class="link-button link-button--filled-blue popup-with-form" target="_self" href="#test-form">
+                <span>
+                    Расписание
                 </span>
-            </div>
-            <div class="portfolio__wrapper">
-                <div class="swiper-container designportfolio">
-                    <div class="swiper-wrapper">
-                    </div>
-                    <div class="swiper-scrollbar designportfolio__scrollbar"></div>
-                  </div>
-            </div>
+            </a>
         </div>
-    </div>
-
-    <div class="portfolio-hidden" id="codingportfolio">
-        <div class="section-black section__wrapper">
-            <div class="section-title">
-                <div class="section-title__text">
-                    CODING
-                    <span class="section-title__subtext">
-                        PORTFOLIO
-                    </span>
-                </div>
-                <span  data-href="codingportfolio" class="section-title__close section-portfolio__close">
-                    <div class="section-title__close-icon">
-                    </div>
-                    CLOSE
+        <div class="menu__item">
+            <a class="link-button link-button--filled-blue popup-with-form" target="_self" href="#test-form">
+                <span>
+                    Трансляция
                 </span>
-            </div>
-            <div class="portfolio__wrapper">
-                <div class="swiper-container codingportfolio">
-                    <div class="swiper-wrapper">
-                    </div>
-                    <div class="swiper-scrollbar codingportfolio__scrollbar"></div>
-                  </div>
-            </div>
+            </a>
         </div>
-    </div>
-
-    <div class="portfolio-hidden" id="consultingportfolio">
-        <div class="section-black section__wrapper">
-            <div class="section-title">
-                <div class="section-title__text">
-                    CONSULTING
-                    <span class="section-title__subtext">
-                        PORTFOLIO
-                    </span>
-                </div>
-                <span  data-href="consultingportfolio" class="section-title__close section-portfolio__close">
-                    <div class="section-title__close-icon">
-                    </div>
-                    CLOSE
+        <div class="menu__item">
+            <a class="link-button link-button--filled-blue popup-with-form" target="_self" href="#test-form">
+                <span>
+                    Купить билет
                 </span>
-            </div>
-            <div class="portfolio__wrapper">
-                <div class="swiper-container consultingportfolio">
-                    <div class="swiper-wrapper">
-                    </div>
-                    <div class="swiper-scrollbar consultingportfolio__scrollbar"></div>
-                  </div>
-            </div>
+            </a>
         </div>
     </div>
 
-    <div class="portfolio-hidden" id="animationportfolio">
-        <div class="section-black section__wrapper">
-            <div class="section-title">
-                <div class="section-title__text">
-                    ANIMATION
-                    <span class="section-title__subtext">
-                        PORTFOLIO
-                    </span>
-                </div>
-                <span  data-href="animationportfolio" class="section-title__close section-portfolio__close">
-                    <div class="section-title__close-icon">
-                    </div>
-                    CLOSE
-                </span>
-            </div>
-            <div class="portfolio__wrapper">
-                <div class="swiper-container animationportfolio">
-                    <div class="swiper-wrapper">
-                    </div>
-                    <div class="swiper-scrollbar animationportfolio__scrollbar"></div>
-                  </div>
-            </div>
-        </div>
-    </div>
+    <!-- form itself -->
+    <form id="test-form" class="mfp-hide white-popup-block">
+        <h1>Form</h1>
+        <fieldset style="border:0;">
+            <p>Lightbox has an option to automatically focus on the first input. It's strongly recommended to use <code>inline</code> popup type for lightboxes with form instead of <code>ajax</code> (to keep entered data if the user accidentally refreshed the page).</p>
+            <ol>
+                <li>
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" placeholder="Name" required="">
+                </li>
+                <li>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="example@domain.com" required="">
+                </li>
+                <li>
+                    <label for="phone">Phone</label>
+                    <input id="phone" name="phone" type="tel" placeholder="Eg. +447500000000" required="">
+                </li>
+                <li>
+                    <label for="textarea">Textarea</label><br>
+                    <textarea id="textarea">Try to resize me to see how popup CSS-based resizing works.</textarea>
+                </li>
+            </ol>
+        </fieldset>
+    </form>
 
-
-    <div class="mail-hidden">
-        <div class="mail-hidden__container">
-            <div class="section" id="write-to-us">
-                <div class="section__wrapper">
-                    <div class="section-title no-a section-title--no-pad">
-                        <div class="section-title__text section-title__text--black no-a">
-                            Write to us -
-                        </div>
-                        <div class="mail-hidden__close hoverable">
-                            X
-                        </div>
-                    </div>
-                    <div class="section-text__wrapper mobile-hidden">
-                        <div class="section-text js-animate-show">
-                            you are welcome to express your ideas or plans for cooperation with us in no particular format.
-                        </div>
-                    </div>
-                    <form method="POST" class="gform" data-email="Hello@bcs.world" action="https://script.google.com/macros/s/AKfycbwXwjSfWWHfUyjmb-wlRjg3jwqX3MDzZCUDzHyhLg/exec">
-                        <div style="display: none" id="thankyou_message" class="thankyou_message">
-                            <h2>
-                                <!-- [FORM_SUCCESS] -->
-                                Thanks, for contacting us!
-                                <!-- [FORM_SUCCESS] -->
-                            </h2>
-                        </div>
-                        <div class="form-elements">
-                            <div class="inputs-wrapper">
-                                <div class="js-animate-show-input input-holder">
-                                    <input type="text" name="name" placeholder="Name">
-                                    <div class="input-holder-line"></div>
-                                </div>
-                                <div class="js-animate-show-input input-holder">
-                                    <input type="email" name="email" placeholder="E-mail">
-                                    <div class="input-holder-line"></div>
-                                </div>
-                                <div class="js-animate-show-input input-holder">
-                                    <input type="text" name="subject" placeholder="Subject">
-                                    <div class="input-holder-line"></div>
-                                </div>
-                            </div>
-                            <div class="textarea-wrapper">
-                                <textarea name="message" class="js-animate-show-textarea animated-top" placeholder="Your message"></textarea>
-                            </div>
-                            <div class="submit-wrapper form-elements">
-                                <input type="submit" class="js-animate-show-submit animated-top" name="" value="Send">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <script src="js/vendor.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
