@@ -66,7 +66,7 @@ $(document).ready(function() {
 
 
 
-  $('.popup-with-form').magnificPopup({
+  /*$('.popup-with-form').magnificPopup({
     type: 'inline',
     preloader: false,
     focus: '#name',
@@ -84,7 +84,7 @@ $(document).ready(function() {
         }
       }
     }
-  });
+  });*/
 });
 
 
