@@ -9,72 +9,13 @@
     <!-- <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/vendor.main.css"> -->
     <link rel="stylesheet" href="dist/css/main.css">
-    <link rel="stylesheet" href="css/vendor.main.css">
 
     <title>Smartsoft company</title>
 </head>
 <body>
-    <div class="menu">
-        <div class="menu__item">
-            <a class="link-button link-button--filled-blue popup-with-form" target="_self" href="#test-form">
-                <span>
-                    Предварительная регистрация
-                </span>
-            </a>
-        </div>
-        <div class="menu__item">
-            <a class="link-button link-button--filled-blue popup-with-form" target="_self" href="#test-form">
-                <span>
-                    Расписание
-                </span>
-            </a>
-        </div>
-        <div class="menu__item">
-            <a class="link-button link-button--filled-blue popup-with-form" target="_self" href="#test-form">
-                <span>
-                    Трансляция
-                </span>
-            </a>
-        </div>
-        <div class="menu__item">
-            <a class="link-button link-button--filled-blue popup-with-form" target="_self" href="#test-form">
-                <span>
-                    Купить билет
-                </span>
-            </a>
-        </div>
-        <div class="menu__item">
-            <!-- Код кнопки, открывающей виджет регистрации на Timepad --><a href="#" id="timepad_twf_register_888157" style="height: 40px !important; display: inline-block !important; text-decoration: none !important;"><img style="height: 40px !important;" src="https://timepad.ru/img/twf2/btns/twfbtn1.png"/></a><script async="async" defer="defer" charset="UTF-8" data-timepad-customized="44466" data-timepad-widget-v2="event_register" src="https://timepad.ru/js/tpwf/loader/min/loader.js">(function(){return {"event" : {"id" : 888157 }, "hidePreloading" : true, "display" : "popup", "popup" : {"triggerSelector" : "#timepad_twf_register_888157"}}})();</script>
-        </div>
-    </div>
-
-    <!-- form itself -->
-    <form id="test-form" class="mfp-hide white-popup-block">
-        <h1>Form</h1>
-        <fieldset style="border:0;">
-            <p>Lightbox has an option to automatically focus on the first input. It's strongly recommended to use <code>inline</code> popup type for lightboxes with form instead of <code>ajax</code> (to keep entered data if the user accidentally refreshed the page).</p>
-            <ol>
-                <li>
-                    <label for="name">Name</label>
-                    <input id="name" name="name" type="text" placeholder="Name" required="">
-                </li>
-                <li>
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="email" placeholder="example@domain.com" required="">
-                </li>
-                <li>
-                    <label for="phone">Phone</label>
-                    <input id="phone" name="phone" type="tel" placeholder="Eg. +447500000000" required="">
-                </li>
-                <li>
-                    <label for="textarea">Textarea</label><br>
-                    <textarea id="textarea">Try to resize me to see how popup CSS-based resizing works.</textarea>
-                </li>
-            </ol>
-        </fieldset>
-    </form>
-
+    <div id="widget-v1"></div>
     <script src="js/vendor.min.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 </html>
