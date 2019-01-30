@@ -60,7 +60,7 @@ $(document).ready(function() {
         '<div class="menu__item_v1">'+
             '<a class="link-button_v1 link-button--filled-blue_v1 popup-with-form" target="_self" href="#curriculum">'+
                 '<span>'+
-                    'Расписание'+
+                    'Программа'+
                 '</span>'+
             '</a>'+
         '</div>'+
@@ -71,7 +71,7 @@ $(document).ready(function() {
                 '<path fill="#FFFFFF" d="M34,4v17H2V4H34z M15,9v7l7.406-3.5L15,9z"/>'+
                 '</svg>'+
                 '<span>'+
-                    'Трансляция'+
+                    'Онлайн-трансляции'+
                 '</span>'+
             '</a>'+
         '</div>'+
