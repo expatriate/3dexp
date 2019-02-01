@@ -111,7 +111,7 @@ var widgetv1events = [
           "четыре"
         ]
       }
-    } 
+    },
     en: {
       "time": "16:00",
       "name": "Test",
