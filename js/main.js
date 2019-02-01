@@ -76,7 +76,6 @@ var handleTWFpostRepaint = function(params) {
 
       this.$$('.add-attendees').on('click', function(e) {
         var self = this;
-        console.log('ALALALA')
         setTimeout(function() {
           $(self).parent().parent().parent().find('[data-tag="name"] label').html('Name <span class="b-registration__question_mandatory">*</span>');
           $(self).parent().parent().parent().find('[data-tag="surname"] label').html('Surname <span class="b-registration__question_mandatory">*</span>');
