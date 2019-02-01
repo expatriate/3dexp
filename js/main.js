@@ -18,8 +18,29 @@ document.body.appendChild(styles);
 var handleTWFpostRepaint = function(params) {
     // Убираем копирайт
     this.$$('.twf2-branding').hide();
+
+    // Убираем подписку на похожие новости
+    this.$$('input[name=subscribe_digest]').click();
+    this.$$('input[name=subscribe_digest]').parent().parent().parent().hide();
     // Убираем благотворительную программу
     this.$$('.js-charity').hide();
+}
+
+var handleTWFrouted = function(e) {
+  if (e.isInitial) {
+      // Создаём английскую локаль
+      this._locales['en'] = {
+        "Пожалуйста, проверьте правильность заполнения выделенных полей.": "DubelmoHchugh wIv yotlh correctness check.",
+        "Выберите тип билетов": "chaw' Segh wIv"
+      };
+
+      // Чистим кеш
+      delete this.localizedTpls['en'];
+
+      // Выставляем английскую локаль
+      this.settings.locale = "en";
+      this.switchLocale('en');
+  } 
 }
 
 // APPEND JS
@@ -29,7 +50,7 @@ script1.defer = 'defer';
 script1.charset = 'UTF-8';
 $(script1).attr('data-timepad-customized', 44466).attr('data-timepad-widget-v2', 'event_register');
 script1.src = 'https://timepad.ru/js/tpwf/loader/min/loader.js';
-script1.innerText = '(function(){return {"event": {"id" : 888157 }, "hidePreloading" : true, "display": "popup", "popup": {"triggerSelector" : "#timepad_twf_register_888157"},"bindEvents": {"postRepaint": "handleTWFpostRepaint"}}})();';
+script1.innerText = '(function(){return {"event": {"id" : 888157 }, "hidePreloading" : true, "display": "popup", "popup": {"triggerSelector" : "#timepad_twf_register_888157"},"bindEvents": {"postRepaint": "handleTWFpostRepaint", "preRoute": "handleTWFrouted"}}})();';
 document.head.appendChild(script1);
 
 // Кнопка предварительно регистрации
@@ -38,7 +59,7 @@ script2.defer = 'defer';
 script2charset = 'UTF-8';
 $(script2).attr('data-timepad-customized', 44466).attr('data-timepad-widget-v2', 'event_register');
 script2.src = 'https://timepad.ru/js/tpwf/loader/min/loader.js';
-script2.innerText = '(function(){return {"event": {"id" : 896017 }, "hidePreloading" : true, "display": "popup", "popup": {"triggerSelector" : "#timepad_twf_register_896017"},"bindEvents": {"postRepaint": "handleTWFpostRepaint"}}})();';
+script2.innerText = '(function(){return {"event": {"id" : 896017 }, "hidePreloading" : true, "display": "popup", "popup": {"triggerSelector" : "#timepad_twf_register_896017"},"bindEvents": {"postRepaint": "handleTWFpostRepaint", "preRoute": "handleTWFrouted"}}})();';
 document.head.appendChild(script2);
 
 // Events data file
