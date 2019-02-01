@@ -46,7 +46,8 @@ var script3 = document.createElement('script');
 script3.src = 'widget/data.js';
 document.head.appendChild(script3);
 
-var locale = {
+// Language mess
+var widgetLocale = {
   ru: {
     buttons1: 'Предварительная регистрация',
     buttons2: 'Программа',
@@ -75,17 +76,17 @@ var locale = {
   }
 }
 
+// Language options
+var widgetLangMess = {};
+if (window.location.href.indexOf('/ru/') >= 0 ) {
+  widgetLangMess = widgetLocale['ru'];
+  widgetLang = 'ru';
+} else {
+  widgetLangMess = widgetLocale['en'];
+  widgetLang = 'en';
+}
+
 $(document).ready(function() {
-
-    var widgetLangMess = {};
-    if (window.location.href.indexOf('/ru/') >= 0 ) {
-      widgetLangMess = locale['ru'];
-      widgetLang = 'ru';
-    } else {
-      widgetLangMess = locale['en'];
-      widgetLang = 'en';
-    }
-
 
     var widget = $('#widget-v1');
     var content = 
