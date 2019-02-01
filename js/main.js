@@ -15,274 +15,6 @@ styles.innerText = ".mfp-bg,.mfp-wrap{position:fixed;left:0;top:0}.mfp-bg,.mfp-c
 document.body.appendChild(styles);
 
 
-var handleTWFpostRepaint = function(params) {
-    // Убираем копирайт
-    this.$$('.twf2-branding').hide();
-
-    // Убираем подписку на похожие новости
-    this.$$('input[name=subscribe_digest]').click();
-    this.$$('input[name=subscribe_digest]').parent().parent().parent().hide();
-    // Убираем благотворительную программу
-    this.$$('.js-charity').hide();
-}
-
-var handleTWFrouted = function(e) {
-  if (e.isInitial) {
-      // Создаём английскую локаль
-      this._locales['en'] = {
-        "недоступно": 'unavailable',
-        "Выберите хотя бы один билет": 'Please select at least one ticket',
-        "Зарегистрироваться": 'Register',
-        "Купить": 'Buy',
-        "Продолжить": 'Proceed',
-        "билет": 'ticket',
-        "билета": 'tickets',
-        "билетов": 'tickets',
-        "билеты": 'tickets',
-        "Регистрация бесплатна.": 'Registration is free',
-        "Фамилия": 'Last name',
-        "Имя": 'First name',
-        "Тип билета": 'Ticket type',
-        "Цена": 'Price',
-        "Кол-во": 'Quantity',
-        "Кол‑во": 'Quantity',
-        "Кол&#8209;во": 'Quantity',
-        "Количество": 'Quantity',
-        "Загрузка схемы зала": 'Hall scheme loading',
-        "Изменить выбор мест": 'Change seats selection',
-        "Выбрать другое место": 'Select another seat',
-        "Выберите места на схеме зала": 'Please select your seats',
-        "Выберите место на схеме зала": 'Please select your seat',
-        "Перейти к заказу": 'Proceed',
-        "Категории билетов": 'Ticket types',
-        "Выбран %s билет": "%s ticket selected",
-        "Выбраны %s билета": "%s tickets selected",
-        "Выбрано %s билетов": "%s tickets selected",
-        "Выберите места": 'Please select your seats',
-        "Выберите место": 'Please select your seat',
-        "Выберите тип билетов": 'Please select your tickets',
-        "Выберите тип билета": 'Please select your ticket',
-        "Или выберите тип билета": 'Or select your ticket',
-        "Вы не выбрали ни одного билета!": 'Please select at least one ticket!',
-        "Вы не выбрали билет!": 'Please select a ticket!',
-        "Продолжая регистрацию, вы принимаете условия": 'By registering to this event you accept',
-        "Пользовательского соглашения": 'User agreement',
-        "и согласны на обработку персональных данных.": 'and personal data processing agreement',
-        "согласие на обработку персональных данных": 'personal data processing agreement',
-        "и подтверждаете ваше": 'and',
-        "Поля, отмеченные звездочкой": 'Fields with an asterisk',
-        "нужно обязательно заполнить": 'are mandatory and must be filled in',
-        "Создано с помощью": 'Powered by',
-        "E-mail заказчика": 'Customer e-mail',
-        "Добавить еще участника": 'Add another participant',
-        "Добавить участника": 'Add participant',
-        "Общая анкета": 'Common profile',
-        "Есть промокод?": 'I\'ve got a promocode!',
-        "Введите промокод": 'Enter promocode',
-        "Применить": 'Apply',
-        "промокод": 'Promocode',
-        "Промокод": 'Promocode',
-        "если есть": 'if you have one',
-        "%s руб.": "%s RUB",
-        "от %s руб.": "from %s RUB",
-        "руб.": 'RUB',
-        " руб.": " RUB",
-        "бесплатно": 'free',
-        "Пожалуйста, проверьте правильность заполнения полей, выделенных красным.": 'Errors detected in highlighted fields. Please correct them and try again.',
-        "Вы выбрали": 'Total',
-        "на сумму": 'for',
-        "Стоимость билета — ": "Ticket price is ",
-        "Произошла неизвестная ошибка коммуникации:": "Unknown connection error:",
-        "Я хочу получать анонсы событий этого организатора по электронной почте": 'Subscribe to organization',
-        "Хочу получать рекомендации интересных событий от TimePad": 'I want to receive recommendations of interesting events from TimePad',
-        "Организатор": 'Organized by',
-        "Время": 'Time',
-        "Вы заказали следующие билеты": 'Your order',
-        "Сумма": 'Total',
-        "Предпочитаю не указывать": 'I prefer not to specify',
-        "Дата": 'Date',
-        "Выберите дату": 'Select date',
-        "Выберите время": 'Select time',
-        "Выберите дату и время": 'Select date and time',
-        "Выбрать другую дату": 'Select another date',
-        "Сначала выберите дату": 'Select date first',
-        "К сожалению, виджету регистрации не удалось загрузиться. Пожалуйста, обратитесь в службу поддержки по адресу": 'Unfortunately this widget failed to load. Please contact our support at',
-        "Зарегистрироваться на событие на сайте": 'You can also register on our site',
-        "Регистрация на событие закрыта": 'Event registration is closed',
-        "Связаться с техподдержкой": 'Contact support',
-        "Телефон": 'Phone',
-        "Оплата участия": 'Registration fee',
-        "Выберите способ оплаты": 'Choose preferred payment method',
-        "Время брони билета ограничено. Бронь будет снята": 'Your reservation will expire',
-        "Подтверждение приема заявки": 'Registration confirmation',
-        "Подтверждение участия будет выслано вам организаторами на адрес, указанный при регистрации. Напоминаем, что без подтверждения регистрация считается недействительной.": 'Your application is received and is waiting for approval. You will be notified by e-mail when your registration is approved. Please note that your registration is not valid before it is approved!',
-        "Спасибо за регистрацию!": 'Thank you for your registration!',
-        "Вы зарегистрировались на событие": 'You were registered for the',
-        "Информация о заказчике": 'Customer information',
-        "Участник №": 'Participant', 
-        "Удалить": 'Delete',
-        "Произошла ошибка на стороне сервера:": "Server returned an error:",
-        "Промокод неправильный": 'Invalid promocode',
-        "Промокод верный": 'Promocode accepted',
-        "Промокод не подошёл": 'Invalid promocode',
-        "Промокод подошёл": 'Promocode accepted',
-        "Проверить": 'Verify',
-        "Закрытие регистрации": 'Registration ends',
-        "Не удалось соединиться с сервером. Пожалуйста, попробуйте еще раз.": 'Failed to connect to server. Please try again.',
-        "К сожалению, на данный момент доступных для регистрации дат нет": 'Unfortunately there are no dates left',
-        "рублей": 'roubles',
-        "Ряд": 'Row',
-        "ряд": 'row',
-        "Место": 'Place',
-        "место": 'place',
-        "Сектор": 'Sector',
-        "сектор": 'sector',
-        "Стол": 'Table',
-        "стол": 'table',
-        "Зарезервировано": 'Reserved',
-
-        "Оплатите картой": 'Payment with card',
-        "Номер карты": 'Card number',
-        "Срок действия": 'Expiration date',
-        "Три последние цифры с оборота карты": '3 digits on the back',
-        "Сумма платежа": 'Total amount',
-        "Латинские буквы, как на карте": 'Cardholder name',
-        "Оплатите с помощью VKPay": 'Pay with VKPay',
-        "Или выберите другой способ оплаты": 'Or you can choose a different payment method',
-        "Внимание": 'Attention',
-        "Связь с техподдержкой": 'Support',
-        "Оплатить": 'Pay',
-        "Всего к оплате": 'Total amount',
-        "Ваш платеж защищен": 'This is an SSL-encrypted payment. You\'re safe.',
-
-        "Введите номер карты": 'Enter card number',
-        "Укажите месяц": 'Select month',
-        "Введите имя владельца карты": 'Enter cardholder name',
-        "Имя держателя карты": 'Cardholer name',
-        "Укажите год/месяц": 'Select year/month',
-        "В имени владельца карты слишком много символов": 'Cardholder name must contains less symbols',
-        "В имени владельца карты допущены ошибки": 'Cardholder name is incorrect',
-        "Введите код с обратной стороны карты": 'Enter CVC/CVV',
-        "Код CVC/CVV": 'CVC/CVV code',
-        "Укажите год": 'Select year',
-        "В e-mail адресе допущены ошибки": 'Incorrect mail',
-        "Код с обратной стороны карты должен состоять из трёх цифр": 'CVC/CVV must contain 3 digits',
-        "В номере карты допущены ошибки": 'Card number is incorrect',
-        "В имени владельца карты слишком мало символов": 'Cardholder name must contains more symbols',
-        "Некорректное значение года/месяца": 'Year or month is incorrect',
-        "Некорректное значение года": 'Year is incorrect',
-        "Некорректное значение месяца": 'Month is incorrect',
-        "Не удалось обработать платёж": 'Failed to process the payment',
-        "Сервис временно недоступен. Пожалуйста, повторите попытку позже": 'Service is temporarily unavailable. Please try again later.',
-        "Часто задаваемые вопросы": 'FAQ',
-
-        "Как оплатить билет": 'How to pay for a ticket',
-        "Как получить билет": 'How to receive a ticket',
-        "Как вернуть билет": 'How to return a ticket',
-
-        "Свободных мест": 'Vacant spots',
-        "Нет в продаже": 'N/A',
-
-        "включая сервисный сбор": 'including service fee',
-        "К сожалению, организатор этого события решил не продавать билеты он-лайн. Чтобы узнать, как вы можете оплатить свое участие, свяжитесь с ним.": 'Unfortunately, event host decided not to sell tickets on-line. Please, contact him for information about payment options.',
-        "Отправить заявку на оплату": 'Send payment request',
-        "Заявка отправлена. В ближайшее время организаторы свяжутся с вами.": 'Request sent. Event hosts will contact you shortly.',
-        "Что-то пошло не так. Попробуйте отправить заявку позже.": 'Something went wrong. Please, try to submit the request later.',
-        "Показать информацию": 'Contact information',
-        "Как оплатить, получить или вернуть билет?": 'Help and support',
-
-        "Закончить регистрацию?": 'Are you sure you want to close registration form?',
-        "После этого вернуть введенные вами данные будет невозможно.": 'It will be impossible to restore the data you\'ve entered.',
-        "Завершить": 'Close',
-        "Нет, продолжить": 'No, proceed',
-        "Продолжая регистрацию, вы подтверждаете свое согласие с условиями": 'By registering to this event you confirm your acceptance of the',
-        "Продолжая регистрацию, вы&nbsp;подтверждаете свое согласие с&nbsp;условиями <a href=\"http://timepad.ru/upload/docs/TimePad_useragreement.pdf\" target=\"_blank\">Пользовательского соглашения</a> и": 'By registering to this event you confirm your acceptance of the <a href=\"http://timepad.ru/upload/docs/TimePad_useragreement.pdf\" target=\"_blank\">User agreement</a> and the',
-        "Я подтверждаю свое согласие с условиями <a href=\"http://timepad.ru/upload/docs/TimePad_useragreement.pdf\" target=\"_blank\">Пользовательского соглашения</a> и": 'I confirm my acceptance of the <a href="http://timepad.ru/upload/docs/TimePad_useragreement_en.pdf" target="_blank">User agreement</a> and the',
-        "Продолжая регистрацию, вы&nbsp;подтверждаете свое согласие с&nbsp;условиями <a href=\"{{event.domain}}/org/user_agreement\" target=\"_blank\">Пользовательского соглашения</a> и": 'By registering to this event you confirm your acceptance of the <a href=\"{{event.domain}}/org/user_agreement_en.pdf\" target=\"_blank\">User agreement</a> and the',
-        "Я подтверждаю свое согласие с условиями <a href=\"{{event.domain}}/org/user_agreement\" target=\"_blank\">Пользовательского соглашения</a> и": 'I confirm my acceptance of the <a href="{{event.domain}}/org/user_agreement_en" target="_blank">User agreement</a> and the',
-        "Договором оказания услуг по организации мероприятия и политикой возвратов": 'Event hosting services terms and the policy of returns',
-        "Договором оказания услуг по организации мероприятия": 'Event hosting services terms',
-        "Необходимо подтвердить согласие с условиями и договором": 'You have to confirm your acceptance of the agreement and the terms',
-        "Заполнить анкеты": 'Fill the profiles',
-        "Информация о событии": 'Event information',
-        "Название": 'Name',
-        "Адрес": 'Location',
-        "Сумма включает сервисный сбор": 'Total includes a service fee',
-        "В качестве благодарности за заказ билетов на TimePad вам предоставляется возможность выбрать один из подарков-скидок в магазинах наших партнеров!": 'As a thank you for ordering your tickets at TimePad you get an opportunity to chose one of the gifts-discounts in our partners stores.',
-        "Узнать подробнее": 'Learn more',
-        "Оплата успешна": 'Payment successfull',
-        "Оплата успешна!": 'Payment successfull',
-        "Распечатайте ваши билеты прямо сейчас, если у вас есть возможность. Мы также отправили ссылки на них на почту": 'Print out your tickets as soon as you have an opportunities. We\'ve also sent links to them to',
-        "Если билеты не пришли, пожалуйста, напишите нам об этом на": 'If you didn\'t recieve your tickets, please email us at',
-        "В письме обязательно укажите событие, на которое вы их покупали.": 'In your letter, make sure to specify the event for which you have bought your tickets.',
-        "Ваши билеты. Распечатайте их сейчас": 'Here are your tickets. Print them out now.',
-        "Распечатать": 'Print',
-        "Билет": 'ticket',
-        "Пожалуйста, сообщите об этом по адресу": 'Please report this error at',
-        "и пришлите ссылку на эту страницу": 'and send us a link to this page',
-        "Вы можете попробовать зарегистрироваться на событие через систему TimePad": 'You can try and register for this event with TimePad',
-        "Перейти к регистрации": 'Proceed to registration',
-        "К сожалению, мы не можем принять оплату за билеты, так как организатор события не подключил возможность покупки билетов через наш сайт. Чтобы оплатить выбранные билеты, рекомендуем вам связаться с организатором и уточнить, как можно оплатить участие.": 'Unfortunately, event host decided not to sell tickets online. We suggest you contact the host for information about payment options.',
-        "Время оплаты заказа ограничено! До окончания платежной сессии:": "Payment period is limited! Time left till the end of payment session:",
-        "Платежная сессия завершена. Нажмите «Далее» для продолжения оплаты.": 'Payment session expired. Press «Continue» to proceed with payment.',
-        "Далее": 'Continue',
-        "Наверх": 'Back to top',
-        "Продажа билетов через": 'Sell tickets with',
-        "Назад": 'Back',
-        "Спасибо за использование": 'Thank you for using',
-        "для покупки билетов!": 'to buy your tickets.',
-
-        "Закажите электронный диплом TimePad": 'Order a digital diploma by TimePad',
-        "подтверждающий вашу регистрацию на это мероприятие": 'configming your registration for this event',
-        "Это полезно": 'It’s good',
-        "Для работы": 'For your job',
-        "диплом усилит ваше резюме и поможет карьерному росту": 'the diploma will enhance your résumé and help your career growth',
-        "Для себя": 'For yourself',
-        "мероприятие пройдет, а диплом останется у вас навсегда": 'the event will pass, the diploma will stay with you forever',
-        "Для коллег и друзей": 'For friends and coworkers',
-        "поделитесь вашими достижениями с близкими": 'share your accomplishments with those around you',
-        "Заказать": 'Order',
-        "Имя": 'Name',
-        "Фамилия": 'Surname',
-        "Город": 'City',
-        "Компания": 'Company name',
-        "Номер телефона": 'Phone number',
-        "Место работы": 'Work place',
-        "номер телефона": 'phone number',
-      };
-
-      // Чистим кеш
-      delete this.localizedTpls['en'];
-
-      // Выставляем английскую локаль
-      this.settings.locale = "en";
-      this.switchLocale('en');
-  } 
-}
-
-// APPEND JS
-// Кнопка покупки билета
-var script1 = document.createElement('script');
-script1.defer = 'defer';
-script1.charset = 'UTF-8';
-$(script1).attr('data-timepad-customized', 44466).attr('data-timepad-widget-v2', 'event_register');
-script1.src = 'https://timepad.ru/js/tpwf/loader/min/loader.js';
-script1.innerText = '(function(){return {"event": {"id" : 888157 }, "hidePreloading" : true, "display": "popup", "popup": {"triggerSelector" : "#timepad_twf_register_888157"},"bindEvents": {"postRepaint": "handleTWFpostRepaint", "preRoute": "handleTWFrouted"}}})();';
-document.head.appendChild(script1);
-
-// Кнопка предварительно регистрации
-var script2 = document.createElement('script');
-script2.defer = 'defer';
-script2charset = 'UTF-8';
-$(script2).attr('data-timepad-customized', 44466).attr('data-timepad-widget-v2', 'event_register');
-script2.src = 'https://timepad.ru/js/tpwf/loader/min/loader.js';
-script2.innerText = '(function(){return {"event": {"id" : 896017 }, "hidePreloading" : true, "display": "popup", "popup": {"triggerSelector" : "#timepad_twf_register_896017"},"bindEvents": {"postRepaint": "handleTWFpostRepaint", "preRoute": "handleTWFrouted"}}})();';
-document.head.appendChild(script2);
-
-// Events data file
-var script3 = document.createElement('script');
-script3.src = 'widget/data.js';
-document.head.appendChild(script3);
 
 // Language mess
 var widgetLocale = {
@@ -323,6 +55,78 @@ if (window.location.href.indexOf('/ru/') >= 0 ) {
   widgetLangMess = widgetLocale['en'];
   widgetLang = 'en';
 }
+
+
+var handleTWFpostRepaint = function(params) {
+    // Убираем копирайт
+    this.$$('.twf2-branding').hide();
+
+    // Убираем подписку на похожие новости
+    this.$$('input[name=subscribe_digest]').click();
+    this.$$('input[name=subscribe_digest]').parent().parent().parent().hide();
+
+    //this.$$(this.innerHTML).replace(/Имя/g, 'Surname');
+    // Убираем благотворительную программу
+    this.$$('.js-charity').hide();
+
+    if (widgetLang == 'en') {
+      this.$$('[data-formname="user_forms[0][name]"] label').html('Name <span class="b-registration__question_mandatory">*</span>');
+      this.$$('[data-formname="user_forms[0][surname]"] label').html('Surname <span class="b-registration__question_mandatory">*</span>');
+      this.$$('[data-formname="user_forms[0][phone]"] label').html('Phone number <span class="b-registration__question_mandatory">*</span>');
+
+      this.$$('.add-attendees').on('click', function(e) {
+        var self = this;
+        console.log('ALALALA')
+        setTimeout(function() {
+          $(self).parent().parent().parent().find('[data-tag="name"] label').html('Name <span class="b-registration__question_mandatory">*</span>');
+          $(self).parent().parent().parent().find('[data-tag="surname"] label').html('Surname <span class="b-registration__question_mandatory">*</span>');
+          $(self).parent().parent().parent().find('[data-tag="phone"] label').html('Phone number <span class="b-registration__question_mandatory">*</span>');
+        },500)
+      })
+    }
+}
+
+var handleSwitchedToNewRenderTarget = function(e) {
+  if (widgetLang == 'en') {
+  }
+}
+
+var handleTWFrouted = function(e) {
+  if (e.isInitial) {
+  } 
+}
+
+
+
+// APPEND JS
+// Кнопка покупки билета
+var script1 = document.createElement('script');
+script1.defer = 'defer';
+script1.charset = 'UTF-8';
+$(script1).attr('data-timepad-customized', 44466).attr('data-timepad-widget-v2', 'event_register');
+script1.src = 'https://timepad.ru/js/tpwf/loader/min/loader.js';
+
+// Кнопка предварительно регистрации
+var script2 = document.createElement('script');
+script2.defer = 'defer';
+script2charset = 'UTF-8';
+$(script2).attr('data-timepad-customized', 44466).attr('data-timepad-widget-v2', 'event_register');
+script2.src = 'https://timepad.ru/js/tpwf/loader/min/loader.js';
+
+if (widgetLang == 'ru') {
+  script1.innerText = '(function(){return {"event": {"id" : 888157 }, "hidePreloading" : true, "display": "popup", "popup": {"triggerSelector" : "#timepad_twf_register_888157"},"bindEvents": {"postRepaint": "handleTWFpostRepaint","switchedToNewRenderTarget" : "handleSwitchedToNewRenderTarget", "preRoute": "handleTWFrouted"}}})();';
+  script2.innerText = '(function(){return {"event": {"id" : 896017 }, "hidePreloading" : true, "display": "popup", "popup": {"triggerSelector" : "#timepad_twf_register_896017"},"bindEvents": {"postRepaint": "handleTWFpostRepaint","switchedToNewRenderTarget" : "handleSwitchedToNewRenderTarget", "preRoute": "handleTWFrouted"}}})();';
+} else {
+  script1.innerText = '(function(){return {"event": {"id" : 900682 }, "hidePreloading" : true, "display": "popup", "locale": "en", "popup": {"triggerSelector" : "#timepad_twf_register_888157"},"bindEvents": {"postRepaint": "handleTWFpostRepaint","switchedToNewRenderTarget" : "handleSwitchedToNewRenderTarget",  "preRoute": "handleTWFrouted"}}})();';
+  script2.innerText = '(function(){return {"event": {"id" : 900680 }, "hidePreloading" : true, "display": "popup", "locale": "en", "popup": {"triggerSelector" : "#timepad_twf_register_896017"},"bindEvents": {"postRepaint": "handleTWFpostRepaint","switchedToNewRenderTarget" : "handleSwitchedToNewRenderTarget",  "preRoute": "handleTWFrouted"}}})();';
+}
+document.head.appendChild(script1);
+document.head.appendChild(script2);
+
+// Events data file
+var script3 = document.createElement('script');
+script3.src = 'widget/data.js';
+document.head.appendChild(script3);
 
 $(document).ready(function() {
 
