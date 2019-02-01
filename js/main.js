@@ -46,42 +46,82 @@ var script3 = document.createElement('script');
 script3.src = 'widget/data.js';
 document.head.appendChild(script3);
 
+var locale = {
+  ru: {
+    buttons1: 'Предварительная регистрация',
+    buttons2: 'Программа',
+    buttons3: 'Онлайн-трансляции',
+    buttons4: 'Купить билет',
+    tabletitle1: 'Время мероприятия',
+    tabletitle2: 'Наименование мероприятия',
+    tabletitle3: 'Спикер',
+    tabletitle4: 'Место проведения',
+    tabletitle5: 'Организатор',
+    tabletitle6: 'Темы для обсуждения',
+    translationText: 'Трансляция еще не скоро :\\',
+  },
+  en: {
+    buttons1: 'Pre-registration',
+    buttons2: 'Program',
+    buttons3: 'Live broadcast',
+    buttons4: 'Buy ticket',
+    tabletitle1: 'Event time',
+    tabletitle2: 'Event name',
+    tabletitle3: 'Speaker',
+    tabletitle4: 'Event place',
+    tabletitle5: 'Promoter',
+    tabletitle6: 'Topics for discussion',
+    translationText: 'The translation is not soon :\\',
+  }
+}
+
 $(document).ready(function() {
+
+    var widgetLangMess = {};
+    if (window.location.href.indexOf('/ru/') >= 0 ) {
+      widgetLangMess = locale['ru'];
+      widgetLang = 'ru';
+    } else {
+      widgetLangMess = locale['en'];
+      widgetLang = 'en';
+    }
+
+
     var widget = $('#widget-v1');
     var content = 
         '<div class="menu_v1">'+
         '<div class="menu__item_v1">'+
             '<a class="link-button_v1 link-button--filled-blue_v1" href="#" id="timepad_twf_register_896017">'+
                 '<span>'+
-                    'Предварительная регистрация'+
+                    widgetLangMess.buttons1 +
                 '</span>'+
             '</a>'+
         '</div>'+
         '<div class="menu__item_v1">'+
             '<a class="link-button_v1 link-button--filled-blue_v1 popup-with-form" target="_self" href="#curriculum">'+
                 '<span>'+
-                    'Программа'+
+                    widgetLangMess.buttons2 +
                 '</span>'+
             '</a>'+
         '</div>'+
         '<div class="menu__item_v1">'+
             '<a class="link-button_v1 link-button--filled-blue_v1 popup-with-form" target="_self" href="#stream">'+
-                '<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24" height="16" viewBox="0 0 36 30" enable-background="new 0 0 36 30" xml:space="preserve">'+
+                '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24" height="16" viewBox="0 0 36 30" enable-background="new 0 0 36 30" xml:space="preserve">'+
                 '<polygon fill="#FFFFFF" points="2,23 2,25 5,25 5,26 6,26 6,25 34,25 34,23 6,23 5.917,22 5,22 4.958,23 "/>'+
                 '<path fill="#FFFFFF" d="M34,4v17H2V4H34z M15,9v7l7.406-3.5L15,9z"/>'+
                 '</svg>'+
                 '<span>'+
-                    'Онлайн-трансляции'+
+                    widgetLangMess.buttons3 +
                 '</span>'+
             '</a>'+
         '</div>'+
         '<div class="menu__item_v1">'+
             '<a class="link-button_v1 link-button--filled-blue_v1" href="#" id="timepad_twf_register_888157">'+
-                '<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24" height="16" viewBox="0 0 36 30" enable-background="new 0 0 36 30" xml:space="preserve">'+
+                '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24" height="16" viewBox="0 0 36 30" enable-background="new 0 0 36 30" xml:space="preserve">'+
                 '<path fill="#FFFFFF" d="M0.34,4.842h7.713l5.201,22.423H32.09v-2.153H14.913l-0.896-3.857l16.458-0.044c0,0,1.068,0.084,1.42-0.965c0.35-1.048,4.041-12.157,4.041-12.157s0.439-1.586-1.504-1.588c-1.939-0.002-24.047,0.045-24.047,0.045L9.443,2.734H0.34C0.34,2.734-0.378,3.407,0.34,4.842z"/>'+
                 '</svg>'+
                 '<span>'+
-                    'Купить билет'+
+                    widgetLangMess.buttons4 +
                 '</span>'+
             '</a>'+
         '</div>'+
@@ -91,22 +131,22 @@ $(document).ready(function() {
         '<div class="row_v1 table-head_v1">'+
             '<div class="col_v1">'+
                 '<span>'+
-                    'Время мероприятия'+
+                    widgetLangMess.tabletitle1+
                 '</span>'+
             '</div>'+
             '<div class="col_v1">'+
                 '<span>'+
-                    'Наименование мероприятия'+
+                    widgetLangMess.tabletitle2+
                 '</span>'+
             '</div>'+
             '<div class="col_v1">'+
                 '<span>'+
-                    'Спикер'+
+                    widgetLangMess.tabletitle3+
                 '</span>'+
             '</div>'+
             '<div class="col_v1">'+
                 '<span>'+
-                    'Место проведения'+
+                    widgetLangMess.tabletitle4+
                 '</span>'+
             '</div>'+
         '</div>'+
@@ -114,7 +154,7 @@ $(document).ready(function() {
         '</div>'+
     '</div>'+
     '<div id="stream" class="mfp-hide white-popup-block">'+
-        '<h3>Трансляция еще не скоро :\</h3>'+
+        '<h3>' + widgetLangMess.translationText + '</h3>'+
     '</div>';
 
     widget.append(content);
@@ -158,18 +198,19 @@ $(document).ready(function() {
 function constructPopup() {
     if (typeof widgetv1events != 'undefined' && widgetv1events.length) {
         var content = '', details = '';
-        widgetv1events.forEach(function(item, index) {
+        widgetv1events.forEach(function(el, index) {
+            var item = el[widgetLang]; 
             var event = '', themes = '', detail = '';
             event = 
                 '<div class="table-line_v1 row_v1 js-open-event" data-event="js-event-' + index +'">'+
                     '<div>'+
-                        '<span class="mobile-visible table-line__time-title">Время мероприятия</span>'+
+                        '<span class="mobile-visible table-line__time-title">'+widgetLangMess.tabletitle1+'</span>'+
                         '<span class="table-line__time">'+
                          item.time +
                         '</span>'+
                     '</div>'+
                     '<div>'+
-                        '<span class="mobile-visible table-line__title-title">Наименование мероприятия</span>'+
+                        '<span class="mobile-visible table-line__title-title">'+widgetLangMess.tabletitle2+'</span>'+
                         '<span class="table-line__title">'+
                             item.name +
                         '</span>'+
@@ -178,14 +219,14 @@ function constructPopup() {
                         '</span>'+
                     '</div>'+
                     '<div>'+
-                        '<span class="mobile-visible table-line__speaker-title">Спикер</span>'+
+                        '<span class="mobile-visible table-line__speaker-title">'+widgetLangMess.tabletitle3+'</span>'+
                         '<img src="widget/images/' + item.speaker_img + '" alt="" class="table-line__speakerimg">'+
                         '<span class="table-line__speaker">'+
                             item.speaker +
                         '</span>'+
                     '</div>'+
                     '<div>'+
-                        '<span class="mobile-visible table-line__plan-title">Место проведения</span>'+
+                        '<span class="mobile-visible table-line__plan-title">'+widgetLangMess.tabletitle4+'</span>'+
                         '<img src="widget/images/' + item.place_img + '" alt="" class="table-line__planimg">'+
                         '<span class="table-line__plan">'+
                             item.place +
@@ -211,13 +252,13 @@ function constructPopup() {
                 '<div id="js-event-' + index + '" class="js-hidden">'+
                     '<div class="table-line-info_v1 row_v1 js-open-event">'+
                         '<div>'+
-                            '<span class="mobile-visible table-line__time-title">Время мероприятия</span>'+
+                            '<span class="mobile-visible table-line__time-title">'+widgetLangMess.tabletitle1+'</span>'+
                             '<span class="table-line__time">'+
                             item.time +
                             '</span>'+
                         '</div>'+
                         '<div>'+
-                            '<span class="mobile-visible table-line__title-title">Наименование мероприятия</span>'+
+                            '<span class="mobile-visible table-line__title-title">'+widgetLangMess.tabletitle2+'</span>'+
                             '<span class="table-line__title">'+
                                 item.name +
                             '</span>'+
@@ -226,14 +267,14 @@ function constructPopup() {
                             '</span>'+
                         '</div>'+
                         '<div>'+
-                            '<span class="mobile-visible table-line__speaker-title">Спикер</span>'+
+                            '<span class="mobile-visible table-line__speaker-title">'+widgetLangMess.tabletitle3+'</span>'+
                             '<img src="widget/images/' + item.speaker_img + '" alt="" class="table-line__speakerimg">'+
                             '<span class="table-line__speaker">'+
                                 item.speaker +
                             '</span>'+
                         '</div>'+
                         '<div>'+
-                            '<span class="mobile-visible table-line__plan-title">Место проведения</span>'+
+                            '<span class="mobile-visible table-line__plan-title">'+widgetLangMess.tabletitle4+'</span>'+
                             '<img src="widget/images/' + item.place_img + '" alt="" class="table-line__planimg">'+
                             '<span class="table-line__plan">'+
                                 item.place +
@@ -242,7 +283,7 @@ function constructPopup() {
                     '</div>'+
                     '<div class="table-line-info_v1 col_v1">'+
                         '<span class="table-line__orgtitle">'+
-                            'Организатор:'+
+                            widgetLangMess.tabletitle5+
                         '</span>'+
                         '<span class="table-line__org">'+
                             item.founder +
@@ -250,14 +291,14 @@ function constructPopup() {
                     '</div>'+
                     '<div class="table-line-info_v1 col_v1">'+
                         '<span class="table-line__themestitle">'+
-                            'Темы для обсуждения:'+
+                            widgetLangMess.tabletitle6+
                         '</span>'+
                         '<span class="table-line__themes">'+
                             themes + 
                         '</span>'+
                         '<div class="table-line__back js-popup-back">'+
                             '<span>'+
-                                '<svg baseProfile="tiny" fill="#ffffff" height="24px" id="Layer_1" version="1.2" viewBox="0 0 24 24" width="24px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M12,3c0,0-6.186,5.34-9.643,8.232C2.154,11.416,2,11.684,2,12c0,0.553,0.447,1,1,1h2v7c0,0.553,0.447,1,1,1h3  c0.553,0,1-0.448,1-1v-4h4v4c0,0.552,0.447,1,1,1h3c0.553,0,1-0.447,1-1v-7h2c0.553,0,1-0.447,1-1c0-0.316-0.154-0.584-0.383-0.768  C18.184,8.34,12,3,12,3z"/></svg>'+
+                                '<svg baseProfile="tiny" fill="#ffffff" height="24px" version="1.2" viewBox="0 0 24 24" width="24px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M12,3c0,0-6.186,5.34-9.643,8.232C2.154,11.416,2,11.684,2,12c0,0.553,0.447,1,1,1h2v7c0,0.553,0.447,1,1,1h3  c0.553,0,1-0.448,1-1v-4h4v4c0,0.552,0.447,1,1,1h3c0.553,0,1-0.447,1-1v-7h2c0.553,0,1-0.447,1-1c0-0.316-0.154-0.584-0.383-0.768  C18.184,8.34,12,3,12,3z"/></svg>'+
                             '</span>'+
                         '</div>'+
                     '</div>'+
